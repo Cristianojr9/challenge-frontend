@@ -11,7 +11,7 @@ export default function Header() {
         <h2>Challenge Frontend</h2>
         <nav>
           <Link to="/">Listagem</Link>
-          <Link to="/add">Adicionar</Link>
+          <Link to="/add">Cadastrar</Link>
           <Link to="/shop"><AiOutlineShoppingCart size="30px"/></Link>
         </nav>
       </header>

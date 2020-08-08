@@ -14,6 +14,8 @@ export const Container = styled.div`
 export const TableContainer = styled.section`
   margin-top: 44px;
 
+
+
   table {
     width: 100%;
     border-spacing: 0 8px;
@@ -33,7 +35,7 @@ export const TableContainer = styled.section`
       background: #fff;
       font-size: 16px;
       font-weight: normal;
-      color: #111;
+      color: #969cb3;
     }
 
     td:first-child {
@@ -43,6 +45,15 @@ export const TableContainer = styled.section`
     td:last-child {
       border-radius: 0 8px 8px 0;
       cursor: pointer;
+    }
+
+    input {
+      border-radius: 4px;
+      border-color: #969cb3;
+
+      &:hover {
+        border-color: #5636d3;
+      }
     }
   }
 `;
