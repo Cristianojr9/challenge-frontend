@@ -1,31 +1,36 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css'; 
 
-import { GrAddCircle } from 'react-icons/gr'
+import { GrAddCircle } from 'react-icons/gr' 
+
 import Header from '../../components/Header';
+
 import { Container, TableContainer } from './styles';
 
+import api from '../../services/api';
+
 export default function AddPage() {
+  const [products, setProducts] = useState([]);
   const [title, setTitle] = useState('');
   const [value, setValue] = useState('');
 
-  async function handleNewProduct(e) {
-    e.preventDefault();
-
-    const products = localStorage['products'] ? JSON.parse(localStorage['products']) : [];
-
+  async function handleAdd() {
     const data = {
-      title,
+      title, 
       value
     }
 
-    if (title === '' && value === '') {
-      alert('complete os campos');
+    if(data.title === '' && data.value === '') {
+      toast.error("Preencha os dados");
     } else {
-      products.push(data);
-      localStorage.setItem("@challenge-fontend/products", JSON.stringify(products));
-      console.log(data)
+      const response = await api.post('/products', data);
+
+      const product = response.data;
+      setProducts([...products, product]);
+
+      toast.success("Cadastrado com sucesso");
     }
-    //window.location.reload();
   }
 
   return(
@@ -63,7 +68,7 @@ export default function AddPage() {
                   <td>
                     <GrAddCircle 
                       size="25px" 
-                      onClick={handleNewProduct}
+                      onClick={handleAdd}
                     />
                   </td>
                 </tr>

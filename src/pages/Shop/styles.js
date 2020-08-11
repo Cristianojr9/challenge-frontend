@@ -11,7 +11,6 @@ export const Container = styled.div`
   }
 `;
 
-
 export const TableContainer = styled.section`
   margin-top: 44px;
 

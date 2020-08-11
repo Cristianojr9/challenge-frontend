@@ -34,6 +34,7 @@ export const TableContainer = styled.section`
       font-size: 16px;
       font-weight: normal;
       color: #111;
+      cursor: pointer;
     }
 
     td:first-child {
@@ -44,5 +45,7 @@ export const TableContainer = styled.section`
       border-radius: 0 8px 8px 0;
       cursor: pointer;
     }
+
+    
   }
 `;
