@@ -1,5 +1,5 @@
 # Challenge frontend
-Nest projeto foi utilizado as seguintes libs:
+Neste projeto foi utilizado as seguintes libs:
 - Styled Components 
 - React-icons
 - Axios 
